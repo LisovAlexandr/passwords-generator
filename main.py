@@ -58,6 +58,7 @@ def accept_char():
 
 
 def gen_password(numbers, length, chars_set):
+    """генерирование пароля"""
     passwords = []
     for i in range(numbers):
         new_pass = ''
