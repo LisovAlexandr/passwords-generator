@@ -13,19 +13,19 @@ def passwords_parameters():
         try:
             numbers = int(input('Количество паролей для генерации: '))
             if numbers <= 0 or numbers > 1000:
-                print('Длина пароля должна быть больше нуля, но не больше 1000')
+                print('Количество паролей для генерации должно быть больше нуля, но не больше 1000')
 
         except ValueError:
-            print('Длина пароля должна указываться цифрой')
+            print('Количество паролей для генерации должно указываться цифрой')
             continue
     length = ''
-    while length == '' or length <= 0:
+    while length == '' or length < 6:
         try:
             length = int(input('Длина одного пароля: '))
-            if length <= 0 or length > 1000:
-                print('Количество паролей должно быть больше нуля, но не больше 1000')
+            if length < 6 or length > 1000:
+                print('Длина пароля должна быть больше 6, но не больше 1000')
         except ValueError:
-            print('Количество паролей нужно указать цифрой')
+            print('Длину пароля нужно указать цифрой')
             continue
 
     return numbers, length
